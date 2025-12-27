@@ -53,14 +53,14 @@ export default function RegisterForm() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800">
-      <div className="w-full max-w-md bg-black border border-amber-500/40 p-8 rounded-2xl shadow-xl shadow-amber-800/40">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0f4f57] to-[#0c4148]">
+      <div className="w-full max-w-md bg-[#0c4148] border border-[#f8d548]/40 p-8 rounded-2xl shadow-xl shadow-yellow-500/20">
         <h1 className="text-2xl font-bold text-white mb-6">Register</h1>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* First Name */}
           <div>
-            <label htmlFor="Firstname" className="block text-sm font-medium text-amber-300">
+            <label htmlFor="Firstname" className="block text-sm font-medium text-[#f8d548]">
               First Name
             </label>
             <input
@@ -69,8 +69,8 @@ export default function RegisterForm() {
               type="text"
               value={formData.Firstname}
               onChange={handleChange}
-              className={`w-full mt-1 px-4 py-2 border rounded-lg bg-gray-900 text-white focus:outline-none focus:ring-2 ${
-                errors.Firstname ? 'border-red-500 focus:ring-red-500' : 'border-amber-500/60 focus:ring-amber-500'
+              className={`w-full mt-1 px-4 py-2 border rounded-lg bg-[#0b3238] text-white focus:outline-none focus:ring-2 ${
+                errors.Firstname ? 'border-red-500 focus:ring-red-500' : 'border-[#f8d548]/60 focus:ring-[#f8d548]'
               }`}
               placeholder="Enter your first name"
             />
@@ -79,7 +79,7 @@ export default function RegisterForm() {
 
           {/* Last Name */}
           <div>
-            <label htmlFor="Lastname" className="block text-sm font-medium text-amber-300">
+            <label htmlFor="Lastname" className="block text-sm font-medium text-[#f8d548]">
               Last Name
             </label>
             <input
@@ -88,8 +88,8 @@ export default function RegisterForm() {
               type="text"
               value={formData.Lastname}
               onChange={handleChange}
-              className={`w-full mt-1 px-4 py-2 border rounded-lg bg-gray-900 text-white focus:outline-none focus:ring-2 ${
-                errors.Lastname ? 'border-red-500 focus:ring-red-500' : 'border-amber-500/60 focus:ring-amber-500'
+              className={`w-full mt-1 px-4 py-2 border rounded-lg bg-[#0b3238] text-white focus:outline-none focus:ring-2 ${
+                errors.Lastname ? 'border-red-500 focus:ring-red-500' : 'border-[#f8d548]/60 focus:ring-[#f8d548]'
               }`}
               placeholder="Enter your last name"
             />
@@ -98,7 +98,7 @@ export default function RegisterForm() {
 
           {/* Email */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-amber-300">
+            <label htmlFor="email" className="block text-sm font-medium text-[#f8d548]">
               Email
             </label>
             <input
@@ -107,8 +107,8 @@ export default function RegisterForm() {
               type="email"
               value={formData.email}
               onChange={handleChange}
-              className={`w-full mt-1 px-4 py-2 border rounded-lg bg-gray-900 text-white focus:outline-none focus:ring-2 ${
-                errors.email ? 'border-red-500 focus:ring-red-500' : 'border-amber-500/60 focus:ring-amber-500'
+              className={`w-full mt-1 px-4 py-2 border rounded-lg bg-[#0b3238] text-white focus:outline-none focus:ring-2 ${
+                errors.email ? 'border-red-500 focus:ring-red-500' : 'border-[#f8d548]/60 focus:ring-[#f8d548]'
               }`}
               placeholder="Enter your email"
             />
@@ -117,7 +117,7 @@ export default function RegisterForm() {
 
           {/* Password */}
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-amber-300">
+            <label htmlFor="password" className="block text-sm font-medium text-[#f8d548]">
               Password
             </label>
             <input
@@ -126,8 +126,8 @@ export default function RegisterForm() {
               type="password"
               value={formData.password}
               onChange={handleChange}
-              className={`w-full mt-1 px-4 py-2 border rounded-lg bg-gray-900 text-white focus:outline-none focus:ring-2 ${
-                errors.password ? 'border-red-500 focus:ring-red-500' : 'border-amber-500/60 focus:ring-amber-500'
+              className={`w-full mt-1 px-4 py-2 border rounded-lg bg-[#0b3238] text-white focus:outline-none focus:ring-2 ${
+                errors.password ? 'border-red-500 focus:ring-red-500' : 'border-[#f8d548]/60 focus:ring-[#f8d548]'
               }`}
               placeholder="Enter your password"
             />
@@ -136,7 +136,7 @@ export default function RegisterForm() {
 
           {/* Confirm Password */}
           <div>
-            <label htmlFor="confirmPassword" className="block text-sm font-medium text-amber-300">
+            <label htmlFor="confirmPassword" className="block text-sm font-medium text-[#f8d548]">
               Confirm Password
             </label>
             <input
@@ -145,8 +145,8 @@ export default function RegisterForm() {
               type="password"
               value={formData.confirmPassword}
               onChange={handleChange}
-              className={`w-full mt-1 px-4 py-2 border rounded-lg bg-gray-900 text-white focus:outline-none focus:ring-2 ${
-                errors.confirmPassword ? 'border-red-500 focus:ring-red-500' : 'border-amber-500/60 focus:ring-amber-500'
+              className={`w-full mt-1 px-4 py-2 border rounded-lg bg-[#0b3238] text-white focus:outline-none focus:ring-2 ${
+                errors.confirmPassword ? 'border-red-500 focus:ring-red-500' : 'border-[#f8d548]/60 focus:ring-[#f8d548]'
               }`}
               placeholder="Confirm your password"
             />
@@ -157,16 +157,16 @@ export default function RegisterForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-amber-500 hover:bg-amber-600 disabled:bg-amber-300 text-black font-semibold py-2 rounded-lg transition"
+            className="w-full bg-[#f8d548] hover:brightness-95 disabled:bg-yellow-300 text-[#0c4148] font-semibold py-2 rounded-lg transition"
           >
             {loading ? 'Registering...' : 'Register'}
           </button>
         </form>
 
         {/* Login Link */}
-        <p className="mt-6 text-center text-gray-300">
+        <p className="mt-6 text-center text-gray-200">
           Already have an account?{' '}
-          <Link href="/login" className="text-amber-400 hover:underline">
+          <Link href="/login" className="text-[#f8d548] hover:underline">
             Login here
           </Link>
         </p>

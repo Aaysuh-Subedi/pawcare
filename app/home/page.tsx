@@ -9,20 +9,20 @@ export default function ProtectedHome() {
           <div className="flex flex-col md:flex-row gap-10 items-center">
             <div className="flex-1 space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/40 text-sm font-semibold">
-                Protected Area (Dummy)
+                (Dummy)
               </div>
-              <h1 className="text-4xl font-bold text-white">Home (Protected)</h1>
+              <h1 className="text-4xl font-bold text-white">Home Page</h1>
               <p className="text-gray-300 leading-relaxed">
-                This is a placeholder for your authenticated home page. Wire it up to your auth flow
-                so only logged-in users can access it. For now it is visible to everyone.
+                This is a placeholder for your authenticated home page.
+                 For now it is visible to everyone.
               </p>
-              <div className="space-y-2 text-sm text-gray-400">
+              {/* <div className="space-y-2 text-sm text-gray-400">
                 <p className="font-semibold text-amber-300">Suggested next steps to secure:</p>
                 <ul className="list-disc list-inside space-y-1">
                   <li>Add an auth check (middleware or server-side) and redirect unauthenticated users to /login.</li>
                   <li>Protect data fetching with session validation on the server.</li>
                 </ul>
-              </div>
+              </div> */}
               <div className="flex flex-wrap gap-3 pt-4">
                 <Link href="/login" className="bg-amber-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-amber-600 transition">
                   Go to Login
