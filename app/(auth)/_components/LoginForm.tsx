@@ -1,10 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { loginSchema } from '../schema';
 import Link from 'next/link';
 
 export default function LoginForm() {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
@@ -30,8 +32,9 @@ export default function LoginForm() {
 
       // Handle login logic here
       console.log('Login data:', result.data);
-      // TODO: Call your login API
-      setLoading(false);
+  // TODO: Call your login API
+  setLoading(false);
+  router.push('/home');
     } catch (error) {
       console.error('Login error:', error);
       setLoading(false);
@@ -39,14 +42,14 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
-      <div className="w-full max-w-md bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Login</h1>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800">
+      <div className="w-full max-w-md bg-black border border-amber-500/40 p-8 rounded-2xl shadow-xl shadow-amber-800/40">
+        <h1 className="text-2xl font-bold text-white mb-6">Login</h1>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Email Field */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label htmlFor="email" className="block text-sm font-medium text-amber-300">
               Email
             </label>
             <input
@@ -54,9 +57,9 @@ export default function LoginForm() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className={`w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ${
-                errors.email ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-blue-500'
-              } dark:bg-gray-700 dark:text-white dark:border-gray-600`}
+              className={`w-full mt-1 px-4 py-2 border rounded-lg bg-gray-900 text-white focus:outline-none focus:ring-2 ${
+                errors.email ? 'border-red-500 focus:ring-red-500' : 'border-amber-500/60 focus:ring-amber-500'
+              }`}
               placeholder="Enter your email"
             />
             {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
@@ -64,7 +67,7 @@ export default function LoginForm() {
 
           {/* Password Field */}
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label htmlFor="password" className="block text-sm font-medium text-amber-300">
               Password
             </label>
             <input
@@ -72,9 +75,9 @@ export default function LoginForm() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className={`w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ${
-                errors.password ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-blue-500'
-              } dark:bg-gray-700 dark:text-white dark:border-gray-600`}
+              className={`w-full mt-1 px-4 py-2 border rounded-lg bg-gray-900 text-white focus:outline-none focus:ring-2 ${
+                errors.password ? 'border-red-500 focus:ring-red-500' : 'border-amber-500/60 focus:ring-amber-500'
+              }`}
               placeholder="Enter your password"
             />
             {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
@@ -84,16 +87,16 @@ export default function LoginForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-medium py-2 rounded-lg transition"
+            className="w-full bg-amber-500 hover:bg-amber-600 disabled:bg-amber-300 text-black font-semibold py-2 rounded-lg transition"
           >
             {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
 
         {/* Register Link */}
-        <p className="mt-6 text-center text-gray-600 dark:text-gray-400">
+        <p className="mt-6 text-center text-gray-300">
           Don&apos;t have an account?{' '}
-          <Link href="/register" className="text-blue-600 hover:underline">
+          <Link href="/register" className="text-amber-400 hover:underline">
             Register here
           </Link>
         </p>
