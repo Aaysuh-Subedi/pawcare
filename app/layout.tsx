@@ -1,12 +1,11 @@
-export default function Layout() {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html>
-      <body>
-    <div>
-      Global Layout
-    </div>
-    </body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
-    
   );
 }

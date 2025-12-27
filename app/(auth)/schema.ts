@@ -1,5 +1,5 @@
 import z from "zod";
-
+// For login validation
 export const loginSchema = z.object({
     email: z.email({ message:"Please enter a valid email"}),
     password: z.string().min(8, {message : "Password must be of 8 characters"}),
@@ -7,6 +7,7 @@ export const loginSchema = z.object({
 
 export type LoginData = z.infer<typeof loginSchema>;
 
+// For registration validation
 export const registerSchema = z.object({
     Firstname : z.string().min(2, {message : "Invalid name"  }),
     Lastname :z.string().min(2, {message :"Invalid name"}),
