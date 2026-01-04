@@ -3,6 +3,7 @@ import bcryptjs from "bcryptjs";
 import { HttpError } from "../errors/http-error";
 import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "../config";
+import { UserRepository } from "../repositories/user.repository";
 
 
 let userRepository = new UserRepository();
@@ -41,6 +42,6 @@ export class UserService {
             phone:user.phone
         }
         const token = jwt.sign(payload, JWT_SECRET, { expiresIn: '30d'});
-        return (token, user)
+        return { token, user };
     }
 }
