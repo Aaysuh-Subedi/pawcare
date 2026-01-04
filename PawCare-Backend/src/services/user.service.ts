@@ -4,6 +4,7 @@ import { HttpError } from "../errors/http-error";
 import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "../config";
 
+
 let userRepository = new UserRepository();
 
 export class UserService {
